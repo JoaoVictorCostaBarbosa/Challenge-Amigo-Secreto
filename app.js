@@ -22,3 +22,14 @@ function atualizarListaAmigos() {
         lista.appendChild(novoAmigo);
     }
 }
+
+function sortearAmigo() {
+    let quantidadeAmigos = amigos.length;
+    if (quantidadeAmigos > 0) {
+        let sorteado = Math.floor(Math.random() * quantidadeAmigos);
+        let campoSorteado = document.getElementById('resultado');
+        campoSorteado.innerHTML = `${amigos[sorteado]}`;
+    } else {
+        alert("Por favor, adicione um amigo antes de realizar o sorteio.");
+    }
+}
