@@ -6,7 +6,19 @@ function adicionarAmigo() {
     if (nome != '') {
         amigos.push(nome);
         campoNome.value = '';
+        atualizarListaAmigos();
     } else {
         alert('Por favor, insira um nome.');
+    }
+}
+
+function atualizarListaAmigos() {
+    const lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';
+
+    for (const amigo of amigos) {
+        const novoAmigo = document.createElement('li');
+        novoAmigo.textContent = `${amigo}`;
+        lista.appendChild(novoAmigo);
     }
 }
